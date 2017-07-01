@@ -1,0 +1,25 @@
+<html>
+<head>
+<meta charset='utf-8'/>
+<title>
+</title>
+<script src="static/js/require.js" data-main="static/js/main"></script>
+</head>
+<body>
+<div>依赖非AMD规范的js库<span id='jquery-dest'>----</span></div>
+<div style="background-color:#ccc;padding:8px;">
+    <p>clipboard.js把文本复制到系统剪切板上<a href="https://clipboardjs.com">官网</a></p>
+    <div style="margin-bottom:30px">
+       <input id='clipboard' value="点击右边按钮,复制本段文本">
+       <button class='btn' data-clipboard-target="#clipboard"> clip </button>
+    </div>
+    <div style="margin-bottom:30px;">
+       <button class="btn" data-clipboard-text="点击直接复制按钮上的文本">点击直接复制按钮上的文本</button>
+    </div>
+    <div>
+        <textarea id='clipboardcut'>点击右边按钮,剪切本段文本</textarea>
+        <button class="btn" data-clipboard-target="#clipboardcut" data-clipboard-action="cut">clip</button>
+    </div>
+</div>
+</body>
+</html>
