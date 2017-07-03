@@ -17,6 +17,10 @@ requirejs.config({
             deps:[],
             exports:'utilNoAMDGlobal'
         },
+        'jssor.slider.min':{
+            deps:[],
+            exports:'$JssorSlider$'
+        },
     },
 });
 
@@ -94,4 +98,24 @@ require(['Chart'], function(Chart){
                }
            }
        });
+});
+
+/**
+ * jssor.js 实现轮播图效果
+ */
+require(['jssor.slider.min'],function($JssorSlider){
+    var options = {
+        $AutoPlay:1,
+        $Loop:1,
+        $DragOrientation:3,
+        $SlideDuration:500,
+        $ArrowNavigatorOptions:{
+            $Class: $JssorArrowNavigator$,
+            $ChanceToShow:2, 
+            $AutoCenter: 2,
+            $Steps:1
+            }
+    };
+    var jssor_slider1 = new $JssorSlider('slider1_container', options);
+    console.log('jssor.slider.min ok');
 });
