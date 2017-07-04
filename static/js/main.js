@@ -24,6 +24,7 @@ requirejs.config({
     },
 });
 
+
 //加载js结束后,可以做一些初始化工作
 requirejs(['helper/util'],function(util){
     util.p();
@@ -137,5 +138,19 @@ require(['jssor.slider.min'],function($JssorSlider){
    
     /*#endregion responsive code end*/
     console.log('jssor.slider.min ok');
+});
+
+
+/*
+ * jquery.lazyload.js 实现图片的延迟加载
+ */
+require(["jquery", "jquery.lazyload"], function($){
+    $(function(){
+        $("img.lazy").lazyload({
+            placeholder: 'static/image/grey.gif', //图片占位
+            threshold:200,  //阈值,跟离200px时提前加载图片
+            effect:'fadeIn' //效果
+        });
+    });
 });
 
