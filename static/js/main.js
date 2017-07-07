@@ -139,3 +139,17 @@ require(['jssor.slider.min'],function($JssorSlider){
     console.log('jssor.slider.min ok');
 });
 
+/**
+ * highlight.js代码高亮工具
+ * 不知道什么原因 initHighlightingOnLoad()实现起来不稳定
+ * 前端页面还应加上highlight.min.css等样式
+ * https://highlightjs.org
+ */
+require(['jquery','highlight.min'],function($,hljs){
+    console.log('highlight.min ok');
+    $(document).ready(function(){
+	$("pre code").each(function(i,block){
+	    hljs.highlightBlock(block);
+	});
+    });
+});
