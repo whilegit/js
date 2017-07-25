@@ -168,3 +168,28 @@ require(["jquery", "jquery.lazyload"], function($){
     });
 });
 
+/*
+ * jquery.base64.js 实现前端base64编码和解码
+ */
+require(["jquery", "jquery.base64"], function($){
+    console.log($.base64.encode('a'));
+    $("#encodeBtn").click(function(){
+        var input = $("#base64_encode_input").val();
+        var output = $.base64.encode(input);
+        $("#base64_decode_input").val(output);
+    });
+    $("#decodeBtn").click(function(){
+        var input = $("#base64_decode_input").val();
+        try{
+            var output = $.base64.decode(input);
+            $("#base64_encode_input").val(output);
+        } catch (e){
+            alert("解码失败");
+        }
+    });
+});
+
+
+
+
+
